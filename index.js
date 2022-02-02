@@ -1,9 +1,15 @@
 // packages needed for the application
-const { tsExpressionWithTypeArguments } = require('@babel/types');
 const fs = require('fs');
 const inquirer = require('inquirer');
 // connect HTML file creator
-const generateSite = require('./utils/generate-site');
+const { writeFile, copyFile } = require('./utils/generate-site');
+const generateSite = require('./src/page.template');
+
+// connect team members
+const Employee = require('./lib/Employee');
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
 
 // have the user choose type of employee to input
 const inputChoices = () => {
@@ -93,16 +99,16 @@ const completeTeam = async () => {
 
 // initial prompts, starting with manager input
 function startQuestions() {
-    // var teamSize = 0;
+    var teamSize = 0;
     console.log(`
     =======================================================
     Lets make your team, please start with the Team Manager
     =======================================================
     `);
-    if there's no 'employee' array property, create one
-    if (!teamData.employee) {
-        teamData.employee =  [];
-    }
+    // if there's no 'employee' array property, create one
+    // if (!teamData.employee) {
+    //     teamData.employee =  [];
+    // }
     return inquirer.prompt([
         {
             type: 'input',
