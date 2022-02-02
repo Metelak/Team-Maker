@@ -78,14 +78,28 @@ const internInput = () => {
     })
 };
 
+// input based on choices of engineer or intern
+const completeTeam = async () => {
+    await inputChoices()
+    .then(response => {
+        if (response.type === 'Engineer'){
+            engineerInput();
+        }
+        if (response.type === 'Intern'){
+            internInput();
+        }
+    })
+};
+
 // initial prompts, starting with manager input
-const startQuestions = teamData => {
+function startQuestions() {
+    // var teamSize = 0;
     console.log(`
     =======================================================
     Lets make your team, please start with the Team Manager
     =======================================================
     `);
-    // if there's no 'employee' array property, create one
+    if there's no 'employee' array property, create one
     if (!teamData.employee) {
         teamData.employee =  [];
     }
@@ -111,12 +125,19 @@ const startQuestions = teamData => {
             message: 'What is the managers office number?',
         },
     ])
-    .then(employeeData => {
-        teamData.employee.push(employeeData);
-        if (employeeData.confirmAddEmployee) {
-            return startQuestions(teamData);
-        } else {
-            return teamData;
-        }
-    });
-}
+    .then (({name, id, email, office}) => {
+        team.push(new Manager(name, id, email, office));
+        completeTeam();
+    })
+};
+// .then(employeeData => {
+    //     teamData.employee.push(employeeData);
+    //     if (employeeData.confirmAddEmployee) {
+    //         return startQuestions(teamData);
+    //     } else {
+    //         return teamData;
+    //     }
+
+
+// initiates the function when user runs node index
+startQuestions();
