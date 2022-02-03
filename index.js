@@ -3,7 +3,7 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 // connect HTML file creator
 const { writeFile, copyFile } = require('./utils/generate-site');
-const generateSite = require('./src/page.template');
+const generateSite = require('./src/page-template');
 
 // connect team members
 const Employee = require('./lib/Employee');
