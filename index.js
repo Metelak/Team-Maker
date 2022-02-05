@@ -2,7 +2,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 // connect HTML file creator
-const writeFile = require('./utils/generate-site');
+const {writeFile, copyFile} = require('./utils/generate-site');
 const generateSite = require('./src/page-template');
 
 // connect team members
@@ -15,7 +15,8 @@ var team =[];
 
 const teamInputSite = function (){
     writeFile(generateSite(team));
-    };
+    copyFile(generateSite(team));
+};
 
 // have the user choose type of employee to input
 const inputChoices = () => {
