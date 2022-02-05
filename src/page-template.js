@@ -20,7 +20,7 @@ const developTeam = teamData => {
 const managerCard = (teamData) => {
     return `
     <section class="standard-card">
-    <div class=name_id_li>
+    <div class=title-li>
     <ul>
     ${teamData.getName()}
     </ul>
@@ -28,7 +28,7 @@ const managerCard = (teamData) => {
     ${teamData.getRole()}
     </ul>
     </div>
-    <div class=other_info>
+    <div class=employee-info>
     <ul>
     ID: ${teamData.id}
     </ul>
@@ -36,7 +36,7 @@ const managerCard = (teamData) => {
     Email :<a href= "mailto: ${teamData.email}">${teamData.email}</a>
     </ul>
     <ul>
-    Office number: ${teamData.office}
+    Office #: ${teamData.office}
     </ul>
     </div>
     </section>`;
@@ -45,7 +45,7 @@ const managerCard = (teamData) => {
 const internCard = (teamData) => {
     return `
     <section class="standard-card">
-    <div class=name_id_li>
+    <div class=title-li>
     <ul>
     ${teamData.name}
     </ul>
@@ -53,7 +53,7 @@ const internCard = (teamData) => {
     ${teamData.getRole()}
     </ul>
     </div>
-    <div class=other_info>
+    <div class=employee-info>
     <ul>
     Email :<a href= "mailto: ${teamData.email}">${teamData.email}</a>
     </ul>
@@ -70,7 +70,7 @@ const internCard = (teamData) => {
 const engineerCard = (teamData) => {
     return `
     <section class="standard-card">
-    <div class=name_id_li>
+    <div class=title-li>
     <ul>
     ${teamData.name}
     </ul>
@@ -78,7 +78,7 @@ const engineerCard = (teamData) => {
     ${teamData.getRole()}
     </ul>
     </div>
-    <div class=other_info>
+    <div class=employee-info>
     <ul>
     ID: ${teamData.id}
     </ul>
@@ -139,8 +139,7 @@ return `
         <section>
 </header>
     <main class="container-lg" id="cards">
-      <section id="team-top">${developTeam(teamData)}</section>
-      <section id="team-bottom"></section>
+      <section id="team">${developTeam(teamData)}</section>
     </main>
   </body>
   </html>
