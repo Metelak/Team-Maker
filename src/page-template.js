@@ -113,7 +113,7 @@ const standard = (teamData) => {
 };
 
 function generateSite(teamData) {
-return`
+return `
   <!DOCTYPE html>
   <html lang="en">
   
@@ -127,14 +127,14 @@ return`
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./src/style.css">
       <title>My Team</title>
   </head>
   <body>
   <header class="container-lg">
   <section class= "row d-flex justify-content-center " id="header"> 
         <div class="text-light h1 ">
-          <!-- Title -->  My Team
+          My Team
         </div>
         <section>
 </header>
