@@ -2,7 +2,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 // connect HTML file creator
-const { writeFile, copyFile } = require('./utils/generate-site');
+const writeFile = require('./utils/generate-site');
 const generateSite = require('./src/page-template');
 
 // connect team members
@@ -11,6 +11,12 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
+var team =[];
+
+const teamInputSite = function (){
+    writeFile(generateSite(team));
+    };
+
 // have the user choose type of employee to input
 const inputChoices = () => {
     const choice = [
@@ -18,7 +24,7 @@ const inputChoices = () => {
             type: 'list',
             name: 'type',
             message: "Pick which type of employee to add to the team",
-            choices: ["Engineer", "Intern"],
+            choices: ["Engineer", "Intern", "Finished"],
         }
     ];
     return inquirer.prompt(choice);
@@ -84,6 +90,11 @@ const internInput = () => {
     })
 };
 
+const finishInput = () =>{
+    console.log('Information logged!');
+    teamInputSite();
+  };
+
 // input based on choices of engineer or intern
 const completeTeam = async () => {
     await inputChoices()
@@ -93,6 +104,9 @@ const completeTeam = async () => {
         }
         if (response.type === 'Intern'){
             internInput();
+        }
+        if (response.type === 'Finished') {
+            finishInput();
         }
     })
 };
