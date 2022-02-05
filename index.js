@@ -37,22 +37,54 @@ const engineerInput = () => {
         {
             type: 'input',
             name: 'name',
-            message: "What is the engineer's name?",
+            message: "What is the engineers name?",
+            validate: nameInput => {
+                if (nameInput) {
+                  return true;
+                } else {
+                  console.log("Enter your engineers name!")
+                  return false;
+                }
+              }
         },
         {
             type: 'input',
             name: 'id',
             message: 'What is the engineers ID?',
+            validate: idInput => {
+                if (idInput) {
+                  return true;
+                } else {
+                  console.log("Enter your engineers id!")
+                  return false;
+                }
+              }
         },
         {
             type: 'input',
             name: 'email',
             message: 'What is the engineers email address?',
+            validate: emailInput => {
+                if (emailInput) {
+                  return true;
+                } else {
+                  console.log("Enter your engineers email!")
+                  return false;
+                }
+              }
         },
         {
             type: 'input',
             name: 'github',
             message: 'What is the engineers GitHub username?',
+            validate: githubInput => {
+                if (githubInput) {
+                  return true;
+                } else {
+                  console.log("Enter your engineers github!")
+                  return false;
+                }
+              }
         },
     ])
     .then(({name, id, email, github}) => {
@@ -68,21 +100,53 @@ const internInput = () => {
             type: 'input',
             name: 'name',
             message: "What is the interns name?",
+            validate: nameInput => {
+                if (nameInput) {
+                  return true;
+                } else {
+                  console.log("Enter your interns name!")
+                  return false;
+                }
+              }
         },
         {
             type: 'input',
             name: 'id',
             message: 'What is the interns ID?',
+            validate: idInput => {
+                if (idInput) {
+                  return true;
+                } else {
+                  console.log("Enter your interns id!")
+                  return false;
+                }
+              }
         },
         {
             type: 'input',
             name: 'email',
             message: 'What is the interns email address?',
+            validate: emailInput => {
+                if (emailInput) {
+                  return true;
+                } else {
+                  console.log("Enter your interns email!")
+                  return false;
+                }
+              }
         },
         {
             type: 'input',
             name: 'school',
             message: 'What is the interns school?',
+            validate: emailInput => {
+                if (emailInput) {
+                  return true;
+                } else {
+                  console.log("Enter your intern's school!")
+                  return false;
+                }
+              }
         },
     ])
     .then(({name, id, email, school}) => {
@@ -129,21 +193,53 @@ function startQuestions() {
             type: 'input',
             name: 'name',
             message: 'What is your managers name?',
+            validate: nameInput => {
+                if (nameInput) {
+                  return true;
+                } else {
+                  console.log("Enter the managers name!")
+                  return false;
+                }
+              }
         },
         {
             type: 'input',
             name: 'id',
             message: 'What is the managers ID?',
+            validate: idInput => {
+                if (idInput) {
+                  return true;
+                } else {
+                  console.log("Enter the managers id!")
+                  return false;
+                }
+              }
         },
         {
             type: 'input',
             name: 'email',
             message: 'What is the managers email?',
+            validate: emailInput => {
+                if (emailInput) {
+                  return true;
+                } else {
+                  console.log("Enter the managers email!")
+                  return false;
+                }
+              }
         },
         {
             type: 'input',
             name: 'office',
             message: 'What is the managers office number?',
+            validate: officeInput => {
+                if (officeInput) {
+                  return true;
+                } else {
+                  console.log("Enter the managers office number!")
+                  return false;
+                }
+              }
         },
     ])
     .then (({name, id, email, office}) => {

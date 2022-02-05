@@ -55,10 +55,10 @@ const internCard = (teamData) => {
     </div>
     <div class=employee-info>
     <ul>
-    Email :<a href= "mailto: ${teamData.email}">${teamData.email}</a>
+    ID: ${teamData.id}
     </ul>
     <ul>
-    ID: ${teamData.id}
+    Email :<a href= "mailto: ${teamData.email}">${teamData.email}</a>
     </ul>
     <ul>
     School: ${teamData.school}
