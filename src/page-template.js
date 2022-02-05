@@ -1,3 +1,4 @@
+// add employee specific cards to the webpage
 const developTeam = teamData => {
     var cardInput = ``;
     for (i =0; i<teamData.length; i++ ){
@@ -16,7 +17,7 @@ const developTeam = teamData => {
     return cardInput;
     console.log(cardInput);
 }
-
+// html input for manager info
 const managerCard = (teamData) => {
     return `
     <section class="standard-card">
@@ -41,7 +42,7 @@ const managerCard = (teamData) => {
     </div>
     </section>`;
 }
-
+// html input for intern info
 const internCard = (teamData) => {
     return `
     <section class="standard-card">
@@ -66,7 +67,7 @@ const internCard = (teamData) => {
     </div>
     </section>`;
 }
-
+// html input for engineer info
 const engineerCard = (teamData) => {
     return `
     <section class="standard-card">
@@ -111,7 +112,7 @@ const standard = (teamData) => {
         }  
     }
 };
-
+// main html
 function generateSite(teamData) {
 return `
   <!DOCTYPE html>
